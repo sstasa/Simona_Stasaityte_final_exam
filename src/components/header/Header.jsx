@@ -5,7 +5,10 @@ function Header(props) {
   return (
     <header className={css.header}>
       <Link to='/'>
-        <div className={css.logo}>Logo</div>
+        <div className={css.logo}>
+          <i className={`${css.logoIcon} fa fa-grav`} aria-hidden='true'></i>{' '}
+          Company
+        </div>
       </Link>
       <nav>
         <ul>

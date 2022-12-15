@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ShopsPage from './pages/ShopsPage';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
@@ -21,12 +22,12 @@ function App() {
         <Route path='/register'>
           <RegisterPage />
         </Route>
-        <Route path='/addshop'>
+        <ProtectedRoute path='/addshop'>
           <AddShopPage />
-        </Route>
-        <Route path='/shops'>
+        </ProtectedRoute>
+        <ProtectedRoute path='/shops'>
           <ShopsPage />
-        </Route>
+        </ProtectedRoute>
       </Switch>
     </div>
   );

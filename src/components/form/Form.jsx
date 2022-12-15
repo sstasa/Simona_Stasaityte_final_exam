@@ -1,8 +1,12 @@
 import css from './Form.module.css';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
+import { useHistory } from 'react-router-dom';
 import { sendRequest } from '../../helpers/helpers';
+import { useAuthCtx } from '../../store/AuthContext';
 function Form(props) {
+  const ctx = useAuthCtx();
+  const history = useHistory();
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -13,13 +17,21 @@ function Form(props) {
       password: Yup.string().min(6).required(),
     }),
     onSubmit: async (values) => {
+      const actionType = props.type;
       const userValues = {
         email: values.email,
         password: values.password,
       };
-      const url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${
+
+      let url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${
         import.meta.env.VITE_API_KEY
       }`;
+
+      if (actionType == 'login') {
+        url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${
+          import.meta.env.VITE_API_KEY
+        }`;
+      }
       const [ats, err] = await sendRequest(userValues, url);
 
       if (err) {
@@ -27,6 +39,9 @@ function Form(props) {
         return;
       }
       console.log('issiusta, ats ===', ats);
+      ctx.login(ats);
+      // jei nera klaidu naviguojam i /profile puslapi
+      history.push('/addshop');
     },
   });
   return (
