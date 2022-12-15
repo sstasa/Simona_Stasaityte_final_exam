@@ -6,7 +6,8 @@
   line-height: 22px;
   display: block;
   width: 100%;
-  margin: 50px 0;
+  margin-top: 50px;
+  margin-bottom: 5px;
 }
 .input::placeholder {
   color: #a0a0a0;
@@ -23,6 +24,8 @@
   line-height: 26px;
   font-weight: 600;
   padding: 9px 126px;
+  cursor: pointer;
+  margin-top: 50px;
 }
 .form {
   background-color: #fff;
@@ -47,4 +50,10 @@
 .link {
   color: #7cd2d7;
   font-weight: 500;
+  cursor: pointer;
+}
+
+.inputError {
+  text-align: left;
+  color: #ff5b5b;
 }
