@@ -1,4 +1,6 @@
+import AddShopForm from '../components/addShopForm/AddShopForm';
+
 function AddShopPage(props) {
-  return <div>AddShopPage</div>;
+  return <AddShopForm />;
 }
 export default AddShopPage;

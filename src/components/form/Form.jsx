@@ -12,12 +12,18 @@ function Form(props) {
       password: Yup.string().min(6).required(),
     }),
     onSubmit: (values) => {
+      const userValues = {
+        email: values.email,
+        password: values.password,
+      };
       console.log(values);
     },
   });
   return (
     <div className={css.form}>
-      <h2 className={css.title}>Create Account</h2>
+      <h2 className={css.title}>
+        {props.type == 'login' ? 'Welcome back!' : 'Create Account'}
+      </h2>
       <p className={css.subtitle}>Please enter your details below</p>
       <form onSubmit={formik.handleSubmit}>
         <input
@@ -49,11 +55,16 @@ function Form(props) {
           ' '
         )}
         <button type='submit' className={css.mainButton}>
-          Register
+          {props.type == 'login' ? 'Log in' : 'Register'}
         </button>
       </form>
       <p className={css.subtitle}>
-        Already have an account? <a className={css.link}>Log in</a>
+        {props.type == 'login'
+          ? `Don't have an account yet? `
+          : 'Already have an account? '}
+        <a className={css.link}>
+          {props.type == 'login' ? 'Register here' : 'Log in'}
+        </a>
       </p>
     </div>
   );
