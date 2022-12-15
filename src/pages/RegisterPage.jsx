@@ -1,4 +1,6 @@
+import Form from '../components/form/Form';
+
 function RegisterPage(props) {
-  return <div>RegisterPage</div>;
+  return <Form />;
 }
 export default RegisterPage;

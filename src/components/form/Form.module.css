@@ -1,0 +1,50 @@
+.input {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #eaeaea;
+  line-height: 22px;
+  display: block;
+  width: 100%;
+  margin: 50px 0;
+}
+.input::placeholder {
+  color: #a0a0a0;
+}
+
+.mainButton {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  background-color: #7cd2d7;
+  border: none;
+  width: 100%;
+  border-radius: 9px;
+  font-size: 17px;
+  line-height: 26px;
+  font-weight: 600;
+  padding: 9px 126px;
+}
+.form {
+  background-color: #fff;
+  padding: 70px 100px;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 50px;
+  border-radius: 15px;
+}
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.subtitle {
+  color: #a0a0a0;
+  font-weight: 300;
+  margin-top: 15px;
+}
+
+.link {
+  color: #7cd2d7;
+  font-weight: 500;
+}
