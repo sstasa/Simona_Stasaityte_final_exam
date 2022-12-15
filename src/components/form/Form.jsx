@@ -1,7 +1,7 @@
 import css from './Form.module.css';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { sendRequest } from '../../helpers/helpers';
 import { useAuthCtx } from '../../store/AuthContext';
 function Form(props) {
@@ -87,9 +87,12 @@ function Form(props) {
         {props.type == 'login'
           ? `Don't have an account yet? `
           : 'Already have an account? '}
-        <a className={css.link}>
+        <Link
+          className={css.link}
+          to={props.type == 'login' ? '/register' : '/login'}
+        >
           {props.type == 'login' ? 'Register here' : 'Log in'}
-        </a>
+        </Link>
       </p>
     </div>
   );
