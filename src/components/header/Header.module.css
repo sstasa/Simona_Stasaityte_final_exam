@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  background-color: white;
+}
+.navLink {
+  list-style: none;
+  display: inline-block;
+  font-weight: 300;
+  padding: 0 30px;
+}
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
