@@ -6,7 +6,13 @@
 
 body {
   margin: 0;
-  background-color: #7cd2d7;
+  background: rgb(124, 210, 215);
+  background: linear-gradient(
+    180deg,
+    rgba(124, 210, 215, 1) 0%,
+    rgba(197, 119, 255, 1) 100%
+  );
+  background-attachment: fixed;
   font-family: 'Poppins', sans-serif;
 }
 
