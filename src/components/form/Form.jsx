@@ -1,6 +1,7 @@
 import css from './Form.module.css';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
+import { sendRequest } from '../../helpers/helpers';
 function Form(props) {
   const formik = useFormik({
     initialValues: {
@@ -11,12 +12,21 @@ function Form(props) {
       email: Yup.string().required(),
       password: Yup.string().min(6).required(),
     }),
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       const userValues = {
         email: values.email,
         password: values.password,
       };
-      console.log(values);
+      const url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${
+        import.meta.env.VITE_API_KEY
+      }`;
+      const [ats, err] = await sendRequest(userValues, url);
+
+      if (err) {
+        console.log('err sendRequest ===', err);
+        return;
+      }
+      console.log('issiusta, ats ===', ats);
     },
   });
   return (

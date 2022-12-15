@@ -23,6 +23,8 @@ function AddShopForm(props) {
   });
   return (
     <div className={css.form}>
+      <h2>Add a new shop</h2>
+      <p>Fill in the details about your shop below</p>
       <form onSubmit={formik.handleSubmit}>
         <input
           type='text'
@@ -94,7 +96,9 @@ function AddShopForm(props) {
         ) : (
           ''
         )}
-        <button type='submit'>Add shop</button>
+        <button type='submit' className={css.mainButton}>
+          Add shop
+        </button>
       </form>
     </div>
   );
