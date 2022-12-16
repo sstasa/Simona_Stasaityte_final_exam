@@ -3,9 +3,8 @@ import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { Link, useHistory } from 'react-router-dom';
 import { sendRequest } from '../../helpers/helpers';
-import { useAuthCtx } from '../../store/AuthContext';
 function Form(props) {
-  const ctx = useAuthCtx();
+  // const ctx = useAuthCtx();
   const history = useHistory();
   const formik = useFormik({
     initialValues: {
@@ -38,9 +37,10 @@ function Form(props) {
         console.log('err sendRequest ===', err);
         return;
       }
+      localStorage.setItem('idToken', ats.idToken);
+      localStorage.setItem('email', ats.email);
       console.log('issiusta, ats ===', ats);
-      ctx.login(ats);
-      // jei nera klaidu naviguojam i /profile puslapi
+      // ctx.login(ats);
       history.push('/addshop');
     },
   });

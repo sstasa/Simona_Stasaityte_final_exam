@@ -1,7 +1,12 @@
 import AddShopForm from '../components/addShopForm/AddShopForm';
+import Header from '../components/header/Header';
 
 function AddShopPage(props) {
-  const { token } = useAuthCtx();
-  return <AddShopForm />;
+  return (
+    <>
+      <Header />
+      <AddShopForm />;
+    </>
+  );
 }
 export default AddShopPage;

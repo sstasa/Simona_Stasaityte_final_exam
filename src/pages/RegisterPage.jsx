@@ -1,6 +1,12 @@
 import Form from '../components/form/Form';
+import Header from '../components/header/Header';
 
 function RegisterPage(props) {
-  return <Form type='register' />;
+  return (
+    <>
+      <Header />
+      <Form type='register' />;
+    </>
+  );
 }
 export default RegisterPage;
