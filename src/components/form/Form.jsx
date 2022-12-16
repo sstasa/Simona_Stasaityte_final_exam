@@ -41,7 +41,7 @@ function Form(props) {
       localStorage.setItem('email', ats.email);
       console.log('issiusta, ats ===', ats);
       // ctx.login(ats);
-      history.push('/addshop');
+      history.push('/');
     },
   });
   return (
