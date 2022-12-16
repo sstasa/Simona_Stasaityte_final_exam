@@ -1,12 +1,13 @@
 import css from '../form/Form.module.css';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
+import { sendRequest } from '../../helpers/helpers';
 function AddShopForm(props) {
   const formik = useFormik({
     initialValues: {
       shopName: '',
       town: '',
-      startYear: 0,
+      startYear: '',
       description: '',
       imageUrl: '',
     },
@@ -17,8 +18,20 @@ function AddShopForm(props) {
       description: Yup.string().min(6).required(),
       imageUrl: Yup.string().min(5).required(),
     }),
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: async (values) => {
+      let shopObj = {
+        shopName: values.shopName,
+        town: values.town,
+        startYear: values.startYear,
+        description: values.description,
+        imageUrl: values.imageUrl,
+      };
+
+      const url = `${import.meta.env.VITE_DB_URL}/firePost/shops.json`;
+
+      const [ats, err] = await sendRequest(shopObj, url);
+      console.log(`err = `, err);
+      console.log(`ats = `, ats);
     },
   });
   return (

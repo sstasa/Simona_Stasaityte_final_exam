@@ -1,3 +1,13 @@
+.form {
+  background-color: white;
+  padding: 70px 100px;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 50px;
+  border-radius: 15px;
+  margin-bottom: 100px;
+}
 .input {
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
@@ -16,7 +26,7 @@
 .mainButton {
   font-family: 'Poppins', sans-serif;
   color: white;
-  background-color: #7cd2d7;
+  background-color: #ff9a53;
   border: none;
   width: 100%;
   border-radius: 9px;
@@ -26,16 +36,6 @@
   padding: 9px 126px;
   cursor: pointer;
   margin-top: 50px;
-}
-.form {
-  background-color: #fff;
-  padding: 70px 100px;
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto;
-  margin-top: 50px;
-  border-radius: 15px;
-  margin-bottom: 100px;
 }
 .title {
   font-size: 2rem;
@@ -49,7 +49,7 @@
 }
 
 .link {
-  color: #7cd2d7;
+  color: #ff9a53;
   font-weight: 500;
   cursor: pointer;
 }

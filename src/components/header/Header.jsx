@@ -32,7 +32,9 @@ function Header(props) {
               <li className={css.navLink}>
                 Logged in as <span>{email}</span>
               </li>
-              <button onClick={handleLogout}>Log out</button>
+              <button onClick={handleLogout} className={css.mainButton}>
+                Log out
+              </button>
             </>
           )}
           {!id && (
