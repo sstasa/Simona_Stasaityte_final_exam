@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { useEffect } from 'react';
 export async function sendRequest(whatToSend, url) {
   try {
     // test url
@@ -22,4 +24,17 @@ export async function sendRequest(whatToSend, url) {
   // isspausdinti atsakykma
   // isspausdinti gauta idTokena
   // issiusti uzklausa su jau sukurtu email dar karta ir isspausdinti klaida.
+}
+
+export function useFetch(url) {
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    fetch(url)
+      .then((resp) => resp.json())
+      .then((gotData) => setData(gotData))
+      .catch((err) => console.warn('useFetch klaida', err));
+  }, []);
+
+  return data;
 }

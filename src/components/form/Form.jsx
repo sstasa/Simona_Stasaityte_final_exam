@@ -42,7 +42,12 @@ function Form(props) {
           return;
         }
         console.log('registered succesfully', ats);
-        history.push('/');
+        toast.success('Registered successfully! Log in below to get started', {
+          style: {
+            textAlign: 'center',
+          },
+        });
+        history.push('/login');
       }
 
       if (actionType == 'login') {

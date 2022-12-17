@@ -2,6 +2,7 @@ import css from '../form/Form.module.css';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { sendRequest } from '../../helpers/helpers';
+import { toast } from 'react-hot-toast';
 function AddShopForm(props) {
   const formik = useFormik({
     initialValues: {
@@ -25,6 +26,7 @@ function AddShopForm(props) {
         startYear: values.startYear,
         description: values.description,
         imageUrl: values.imageUrl,
+        postId: Math.floor(Math.random() * 1e15),
       };
 
       const url = `${import.meta.env.VITE_DB_URL}/firePost/shops.json`;
@@ -32,6 +34,11 @@ function AddShopForm(props) {
       const [ats, err] = await sendRequest(shopObj, url);
       console.log(`err = `, err);
       console.log(`ats = `, ats);
+      if (ats) {
+        toast.success('Shop added succesfully!');
+      } else {
+        toast.error('Something went wrong..');
+      }
     },
   });
   return (

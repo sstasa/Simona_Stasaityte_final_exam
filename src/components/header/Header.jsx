@@ -15,8 +15,6 @@ function Header(props) {
     });
     history.push('/');
   }
-
-  console.log(user);
   return (
     <header className={css.header}>
       <Link to='/'>
@@ -36,7 +34,7 @@ function Header(props) {
                 <Link to='/shops'>Shops</Link>
               </li>
               <li className={css.navLink}>
-                Logged in as <span>{user.email}</span>
+                Logged in as <span>{user.emailValue}</span>
               </li>
               <button onClick={handleLogout} className={css.mainButton}>
                 Log out

@@ -1,3 +1,4 @@
+import AllShops from '../components/allShops/AllShops';
 import Header from '../components/header/Header';
 import { useUser } from '../helpers/UserContext';
 import PleaseLoginPage from './pleaseLoginPage/PleaseLoginPage';
@@ -9,7 +10,7 @@ function ShopsPage(props) {
       {user.isUserLoggedIn ? (
         <>
           <Header />
-          <div>hello</div>
+          <AllShops />
         </>
       ) : (
         <PleaseLoginPage />

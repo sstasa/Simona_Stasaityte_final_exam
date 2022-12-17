@@ -1,0 +1,9 @@
+li {
+  list-style-type: none;
+}
+.imageContainer {
+  width: 300px;
+  height: 300px;
+  border-radius: 200px;
+  overflow: hidden;
+}

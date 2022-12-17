@@ -34,7 +34,7 @@ export function UserProvider({ children }) {
     login,
     logout,
     isUserLoggedIn,
-    email: emailValue,
+    emailValue,
     id,
   };
   return (
