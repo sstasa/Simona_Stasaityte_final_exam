@@ -1,4 +1,5 @@
 import css from '../form/Form.module.css';
+import cssAdd from './AddShopForm.module.css';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { sendRequest } from '../../helpers/helpers';
@@ -42,10 +43,13 @@ function AddShopForm(props) {
     },
   });
   return (
-    <div className={css.form}>
+    <section className='container'>
       <h2>Add a new shop</h2>
-      <p>Fill in the details about your shop below</p>
-      <form onSubmit={formik.handleSubmit}>
+      <p className={css.subtitle}>Fill in the details about your shop below</p>
+      <form
+        onSubmit={formik.handleSubmit}
+        className={`${css.form} container ${cssAdd.form}`}
+      >
         <input
           type='text'
           name='shopName'
@@ -120,7 +124,7 @@ function AddShopForm(props) {
           Add shop
         </button>
       </form>
-    </div>
+    </section>
   );
 }
 export default AddShopForm;

@@ -1,15 +1,14 @@
 import css from './SingleShopCard.module.css';
 function SingleShopCard(props) {
   return (
-    <li key={props.postId}>
-      <div className={css.imageContainer}>
-        <img src={props.imageUrl} alt='shop image' />
+    <li key={props.postId} className={css.card}>
+      <div className={css.imageWrapper}>
+        <img src={props.imageUrl} alt='shop image' className={css.cardImage} />
       </div>
-      <h2>{props.shopName}</h2>
-      <h3>
-        Located in {props.town}. Opened in {props.startYear}
-      </h3>
-      <p>{props.description}</p>
+      <p className={css.pill}>{props.town}</p>
+      <h2 className={css.cardTitle}>{props.shopName}</h2>
+      <h3 className={css.subtitle}>Opened in {props.startYear}</h3>
+      <p className={css.description}>{props.description}</p>
     </li>
   );
 }

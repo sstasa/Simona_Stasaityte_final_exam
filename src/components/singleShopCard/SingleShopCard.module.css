@@ -1,9 +1,48 @@
 li {
   list-style-type: none;
 }
-.imageContainer {
-  width: 300px;
-  height: 300px;
-  border-radius: 200px;
-  overflow: hidden;
+
+.card {
+  box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08),
+    0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.imageWrapper {
+  height: 200px;
+}
+
+.cardImage {
+  border-radius: 4px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pill {
+  display: inline-block;
+  background-color: #ffdfc8;
+  color: #ff9a53;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 14px;
+  border-radius: 16px;
+  padding: 0 10px;
+  margin-top: 28px;
+}
+
+.cardTitle {
+  margin-top: 5px;
+}
+
+.subtitle {
+  font-weight: 500;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.description {
+  color: #667085;
+  line-height: 24px;
+  margin-top: 10px;
 }
