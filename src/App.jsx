@@ -1,3 +1,4 @@
+import { Toaster } from 'react-hot-toast';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import { UserProvider } from './helpers/UserContext';
@@ -10,6 +11,9 @@ import ShopsPage from './pages/ShopsPage';
 function App() {
   return (
     <div className='App'>
+      <div>
+        <Toaster />
+      </div>
       <Switch>
         <UserProvider>
           <Route path='/' exact>

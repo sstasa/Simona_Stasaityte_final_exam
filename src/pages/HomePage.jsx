@@ -1,14 +1,15 @@
 import Header from '../components/header/Header';
 import LoggedHome from '../components/loggedHome/LoggedHome';
 import NotLoggedHome from '../components/notLoggedHome/NotLoggedHome';
+import { useUser } from '../helpers/UserContext';
 
 function HomePage(props) {
-  let id = localStorage.getItem('idToken');
+  const user = useUser();
   return (
     <>
       <Header />
-      {id && <LoggedHome />}
-      {!id && <NotLoggedHome />}
+      {user.isUserLoggedIn && <LoggedHome />}
+      {!user.isUserLoggedIn && <NotLoggedHome />}
     </>
   );
 }

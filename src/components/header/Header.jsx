@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import css from './Header.module.css';
 import { useHistory } from 'react-router-dom';
 import { useUser } from '../../helpers/UserContext';
+import { toast } from 'react-hot-toast';
 
 function Header(props) {
   const user = useUser();
@@ -9,6 +10,9 @@ function Header(props) {
 
   function handleLogout() {
     user.logout();
+    toast('See you next time!', {
+      icon: '👏',
+    });
     history.push('/');
   }
 

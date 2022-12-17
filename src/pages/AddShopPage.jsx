@@ -1,18 +1,19 @@
 import AddShopForm from '../components/addShopForm/AddShopForm';
 import Header from '../components/header/Header';
+import { useUser } from '../helpers/UserContext';
 import PleaseLoginPage from './pleaseLoginPage/PleaseLoginPage';
 
 function AddShopPage(props) {
-  let id = localStorage.getItem('idToken');
+  const user = useUser();
   return (
     <div>
-      {!id ? (
-        <PleaseLoginPage />
-      ) : (
+      {user.isUserLoggedIn ? (
         <>
           <Header />
           <AddShopForm />
         </>
+      ) : (
+        <PleaseLoginPage />
       )}
     </div>
   );

@@ -4,6 +4,7 @@ import { useFormik } from 'formik';
 import { Link, useHistory } from 'react-router-dom';
 import { sendRequest } from '../../helpers/helpers';
 import { useUser } from '../../helpers/UserContext';
+import { toast } from 'react-hot-toast';
 function Form(props) {
   const user = useUser();
   const history = useHistory();
@@ -23,28 +24,54 @@ function Form(props) {
         password: values.password,
       };
 
-      let url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${
-        import.meta.env.VITE_API_KEY
-      }`;
+      let url = 'https://identitytoolkit.googleapis.com/v1/accounts:';
+
+      if (actionType == 'register') {
+        url = `${url}signUp?key=${import.meta.env.VITE_API_KEY}`;
+        const [ats, err] = await sendRequest(userValues, url);
+        if (err) {
+          console.log('err sendRequest ===', err);
+          switch (err.error.message) {
+            case 'EMAIL_EXISTS':
+              toast.error('This email is already in use!');
+              break;
+            case 'INVALID_EMAIL':
+              toast.error('Please enter a valid email!');
+              break;
+          }
+          return;
+        }
+        console.log('registered succesfully', ats);
+        history.push('/');
+      }
 
       if (actionType == 'login') {
-        url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${
-          import.meta.env.VITE_API_KEY
-        }`;
+        url = `${url}signInWithPassword?key=${import.meta.env.VITE_API_KEY}`;
+        const [ats, err] = await sendRequest(userValues, url);
+        if (err) {
+          console.log('err sendRequest ===', err);
+          switch (err.error.message) {
+            case 'INVALID_EMAIL':
+              toast.error('Please enter a valid email!');
+              break;
+            case 'EMAIL_NOT_FOUND':
+            case 'INVALID_PASSWORD':
+              toast.error('Incorrect email or password!');
+              break;
+            case 'TOO_MANY_ATTEMPTS_TRY_LATER : Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later.':
+              toast.error('Too many attempts to log in! Please try later');
+              break;
+          }
+          return;
+        }
+        console.log('issiusta, ats ===', ats);
+        let userObj = {
+          idToken: ats.idToken,
+          email: ats.email,
+        };
+        user.login(userObj);
+        history.push('/');
       }
-      const [ats, err] = await sendRequest(userValues, url);
-
-      if (err) {
-        console.log('err sendRequest ===', err);
-        return;
-      }
-      console.log('issiusta, ats ===', ats);
-      let userObj = {
-        idToken: ats.idToken,
-        email: ats.email,
-      };
-      user.login(userObj);
-      history.push('/');
     },
   });
   return (
