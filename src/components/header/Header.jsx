@@ -1,16 +1,18 @@
 import { Link } from 'react-router-dom';
 import css from './Header.module.css';
 import { useHistory } from 'react-router-dom';
+import { useUser } from '../../helpers/UserContext';
 
 function Header(props) {
-  let id = localStorage.getItem('idToken');
-  let email = localStorage.getItem('email');
+  const user = useUser();
   const history = useHistory();
 
   function handleLogout() {
-    localStorage.clear();
+    user.logout();
     history.push('/');
   }
+
+  console.log(user);
   return (
     <header className={css.header}>
       <Link to='/'>
@@ -21,7 +23,7 @@ function Header(props) {
       </Link>
       <nav>
         <ul>
-          {id && (
+          {user.isUserLoggedIn && (
             <>
               <li className={css.navLink}>
                 <Link to='/addshop'>Add Shop</Link>
@@ -30,14 +32,14 @@ function Header(props) {
                 <Link to='/shops'>Shops</Link>
               </li>
               <li className={css.navLink}>
-                Logged in as <span>{email}</span>
+                Logged in as <span>{user.email}</span>
               </li>
               <button onClick={handleLogout} className={css.mainButton}>
                 Log out
               </button>
             </>
           )}
-          {!id && (
+          {!user.isUserLoggedIn && (
             <>
               <li className={css.navLink}>
                 <Link to='/login'>Login</Link>
