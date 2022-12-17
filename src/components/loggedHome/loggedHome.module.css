@@ -1,10 +1,10 @@
 .loggedHero {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-top: 100px;
 }
 .loggedHeroTitle {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-top: 90px;
 }
 .subtitle {
@@ -23,5 +23,6 @@
   border: none;
   border-radius: 8px;
   padding: 15px 25px;
-  margin: 20px 10px;
+  margin-right: 20px;
+  margin-top: 40px;
 }

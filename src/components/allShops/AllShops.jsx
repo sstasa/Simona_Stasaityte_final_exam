@@ -1,7 +1,8 @@
 import SingleShopCard from '../singleShopCard/SingleShopCard';
 import { useFetch } from '../../helpers/helpers';
 import { useState } from 'react';
-import { toast } from 'react-hot-toast';
+import css from './AllShops.module.css';
+import { Link } from 'react-router-dom';
 
 function AllShops(props) {
   let url = `${import.meta.env.VITE_DB_URL}/firePost/shops.json`;
@@ -21,9 +22,28 @@ function AllShops(props) {
   }
 
   return (
-    <section>
+    <section className={`${css.shopsSection} container`}>
+      <h2>Shops</h2>
+      {!noShops && <p>{shopsArr.length}</p>}
       {shopsLoading && !noShops && <h2>Loading...</h2>}
-      {noShops && <h2>No shops created</h2>}
+      {noShops && (
+        <div className={css.noShops}>
+          <div className={css.leftSide}>
+            <h2 className={css.noShopsTitle}>
+              Sorry, we did not find any created shops..
+            </h2>
+            <p>Try adding a new shop to get started.</p>
+            <Link>
+              <button className={css.mainButton}>Create one here</button>
+            </Link>
+          </div>
+          <img
+            src='../src/assets/shrug.png'
+            alt='not found image'
+            className={css.notFoundImg}
+          ></img>
+        </div>
+      )}
       {!noShops && (
         <ul>
           {shopsArr.map((shopObj) => (

@@ -12,7 +12,12 @@ function App() {
   return (
     <div className='App'>
       <div>
-        <Toaster />
+        <Toaster
+          containerStyle={{
+            top: 100,
+            left: 570,
+          }}
+        />
       </div>
       <Switch>
         <UserProvider>

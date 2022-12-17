@@ -80,56 +80,59 @@ function Form(props) {
     },
   });
   return (
-    <div className={css.form}>
-      <h2 className={css.title}>
-        {props.type == 'login' ? 'Welcome back!' : 'Create Account'}
-      </h2>
-      <p className={css.subtitle}>Please enter your details below</p>
-      <form onSubmit={formik.handleSubmit}>
-        <input
-          type='text'
-          placeholder='Email'
-          name='email'
-          className={css.input}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.email}
-        />
-        {formik.touched.email && formik.errors.email ? (
-          <p className={css.inputError}>{formik.errors.email}</p>
-        ) : (
-          ''
-        )}
-        <input
-          type='password'
-          placeholder='Password'
-          name='password'
-          className={css.input}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.password}
-        />
-        {formik.touched.password && formik.errors.password ? (
-          <p className={css.inputError}>{formik.errors.password}</p>
-        ) : (
-          ' '
-        )}
-        <button type='submit' className={css.mainButton}>
-          {props.type == 'login' ? 'Log in' : 'Register'}
-        </button>
-      </form>
-      <p className={css.subtitle}>
-        {props.type == 'login'
-          ? `Don't have an account yet? `
-          : 'Already have an account? '}
-        <Link
-          className={css.link}
-          to={props.type == 'login' ? '/register' : '/login'}
-        >
-          {props.type == 'login' ? 'Register here' : 'Log in'}
-        </Link>
-      </p>
-    </div>
+    <section className={css.formSection}>
+      <div className={css.formImage}></div>
+      <div className={`${css.form}`}>
+        <h2 className={css.title}>
+          {props.type == 'login' ? 'Welcome back!' : 'Create Account'}
+        </h2>
+        <p className={css.subtitle}>Please enter your details below</p>
+        <form onSubmit={formik.handleSubmit}>
+          <input
+            type='text'
+            placeholder='Email'
+            name='email'
+            className={css.input}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.email}
+          />
+          {formik.touched.email && formik.errors.email ? (
+            <p className={css.inputError}>{formik.errors.email}</p>
+          ) : (
+            ''
+          )}
+          <input
+            type='password'
+            placeholder='Password'
+            name='password'
+            className={css.input}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.password}
+          />
+          {formik.touched.password && formik.errors.password ? (
+            <p className={css.inputError}>{formik.errors.password}</p>
+          ) : (
+            ' '
+          )}
+          <button type='submit' className={css.mainButton}>
+            {props.type == 'login' ? 'Log in' : 'Register'}
+          </button>
+        </form>
+        <p className={css.subtitle}>
+          {props.type == 'login'
+            ? `Don't have an account yet? `
+            : 'Already have an account? '}
+          <Link
+            className={css.link}
+            to={props.type == 'login' ? '/register' : '/login'}
+          >
+            {props.type == 'login' ? 'Register here' : 'Log in'}
+          </Link>
+        </p>
+      </div>
+    </section>
   );
 }
 export default Form;

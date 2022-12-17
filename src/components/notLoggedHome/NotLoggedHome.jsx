@@ -3,14 +3,14 @@ import css from './notLoggedHome.module.css';
 
 function NotLoggedHome(props) {
   return (
-    <section className={css.hero}>
+    <section className={`container ${css.hero}`}>
       <div>
         <h1 className={css.heroTitle}>
           Get your shops launched with{' '}
           <span className={css.accent}>Company</span>
         </h1>
         <p className={css.subtitle}>
-          We provide the best service for your shops
+          We provide the best service for your shops.
         </p>
         <button className={css.mainButton}>
           <Link to='register'>Get started</Link>

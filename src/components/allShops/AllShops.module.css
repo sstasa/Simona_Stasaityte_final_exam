@@ -1,23 +1,24 @@
-.header {
+.title {
+  font-size: 2rem;
+  padding: 20px;
+}
+.noShops {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background-color: white;
-  padding: 10px 20px;
-}
-.navLink {
-  list-style: none;
-  display: inline-block;
-  font-weight: 300;
   padding: 0 30px;
 }
-.logo {
-  font-size: 1.8rem;
-  font-weight: 600;
+.leftSide {
+  align-self: center;
 }
-.logoIcon {
-  color: #ff9a53;
+.noShopsTitle {
+  font-size: 2.7rem;
+  font-weight: 500;
 }
+.notFoundImg {
+  display: block;
+  max-width: 500px;
+}
+
 .mainButton {
   font-family: 'Poppins', sans-serif;
   background-color: #ff9a53;
