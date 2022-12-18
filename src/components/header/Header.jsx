@@ -3,6 +3,7 @@ import css from './Header.module.css';
 import { useHistory } from 'react-router-dom';
 import { useUser } from '../../helpers/UserContext';
 import { toast } from 'react-hot-toast';
+import Button from '../UI/button/Button';
 
 function Header(props) {
   const user = useUser();
@@ -36,20 +37,18 @@ function Header(props) {
               <li className={css.navLink}>
                 Logged in as <span>{user.emailValue}</span>
               </li>
-              <button onClick={handleLogout} className={css.mainButton}>
-                Log out
-              </button>
+              <Button onClick={handleLogout}>Log out</Button>
             </>
           )}
           {!user.isUserLoggedIn && (
-            <>
-              <li className={css.navLink}>
-                <Link to='/login'>Login</Link>
-              </li>
-              <li className={css.navLink}>
-                <Link to='/register'>Register</Link>
-              </li>
-            </>
+            <div className={css.headerButtons}>
+              <Link to='/login'>
+                <Button>Login</Button>
+              </Link>
+              <Link to='/register'>
+                <Button type='alt'>Register</Button>
+              </Link>
+            </div>
           )}
         </ul>
       </nav>

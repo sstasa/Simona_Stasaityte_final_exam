@@ -1,0 +1,22 @@
+.notFound {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  padding: 0 100px;
+}
+.fourohfour {
+  margin-top: 80px;
+  font-size: 96px;
+}
+.title {
+  font-size: 64px;
+}
+.subtitle {
+  color: #646466;
+  font-weight: normal;
+  margin: 30px auto;
+}
+.notFoundImg {
+  max-width: 400px;
+  margin: 30px 20px;
+}

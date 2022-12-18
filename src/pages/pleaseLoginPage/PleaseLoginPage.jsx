@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Header from '../../components/header/Header';
+import Button from '../../components/UI/button/Button';
 import { useUser } from '../../helpers/UserContext';
 import css from './PleaseLoginPage.module.css';
 function PleaseLoginPage(props) {
@@ -20,12 +21,12 @@ function PleaseLoginPage(props) {
         ></img>
         {user.isUserLoggedIn ? (
           <Link to='/'>
-            <button className={css.mainButton}>Go back to home page</button>
+            <Button>Go back to home page</Button>
           </Link>
         ) : (
           <>
             <Link to='/login' className={css.link}>
-              <button className={css.mainButton}>Log in</button>
+              <Button>Log in</Button>
             </Link>
             <p className={css.redirect}>
               Don't have an account yet?{' '}

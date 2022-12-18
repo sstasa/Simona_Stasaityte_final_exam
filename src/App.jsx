@@ -5,6 +5,7 @@ import { UserProvider } from './helpers/UserContext';
 import AddShopPage from './pages/AddShopPage';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
+import NotFoundPage from './pages/notFoundPage/NotFoundPage';
 import RegisterPage from './pages/RegisterPage';
 import ShopsPage from './pages/ShopsPage';
 
@@ -12,12 +13,7 @@ function App() {
   return (
     <div className='App'>
       <div>
-        <Toaster
-          containerStyle={{
-            top: 100,
-            left: 570,
-          }}
-        />
+        <Toaster gutter={-45} />
       </div>
       <Switch>
         <UserProvider>
@@ -35,6 +31,9 @@ function App() {
           </Route>
           <Route path='/shops'>
             <ShopsPage />
+          </Route>
+          <Route path='*'>
+            <NotFoundPage />
           </Route>
         </UserProvider>
       </Switch>

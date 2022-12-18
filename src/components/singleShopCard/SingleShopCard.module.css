@@ -8,14 +8,19 @@ li {
   border-radius: 8px;
   padding: 24px;
   width: 350px;
+  height: 500px;
+  transition: all 0.2s ease-out;
 }
-
+.card:hover {
+  transform: scale(1.05);
+}
 .imageWrapper {
   height: 200px;
 }
 
 .cardImage {
   border-radius: 4px;
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
@@ -46,5 +51,17 @@ li {
   color: #667085;
   line-height: 24px;
   margin-top: 15px;
+  height: 120px;
+  overflow: auto;
   word-wrap: break-word;
+}
+
+.description::-webkit-scrollbar {
+  width: 4px;
+}
+
+.description::-webkit-scrollbar-thumb {
+  background-color: #ff9a53;
+  border-radius: 60px;
+  width: 2px;
 }

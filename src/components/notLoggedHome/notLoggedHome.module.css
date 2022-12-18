@@ -1,7 +1,6 @@
 .hero {
   display: flex;
   align-items: center;
-  padding-top: 60px;
   padding-bottom: 100px;
 }
 .heroTitle {
@@ -12,18 +11,8 @@
   color: #ff9a53;
 }
 
-.mainButton {
-  font-family: 'Poppins', sans-serif;
-  background-color: #ff9a53;
-  color: white;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
-  padding: 15px 25px;
-  margin-top: 30px;
-  margin-bottom: 20px;
-}
-
 .subtitle {
   color: #646464;
+  margin-top: 30px;
+  margin-bottom: 40px;
 }

@@ -1,9 +1,7 @@
 .section {
-  background-color: #fff;
   margin: 50px auto;
   max-width: 600px;
   padding: 70px;
-  border-radius: 16px;
   text-align: center;
 }
 
@@ -14,30 +12,16 @@
 
 .redirect {
   color: #aeaeae;
+  margin-top: 10px;
 }
 
 .link {
-  color: #7cd2d7;
+  color: #ff9a53;
   font-weight: 500;
 }
 
-.mainButton {
-  font-family: 'Poppins', sans-serif;
-  color: white;
-  background-color: #ff9a53;
-  border: none;
-  border-radius: 9px;
-  font-size: 17px;
-  line-height: 26px;
-  font-weight: 600;
-  padding: 9px 70px;
-  cursor: pointer;
-  margin-top: 30px;
-  margin-bottom: 15px;
-}
-
 .authImg {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
   max-width: 400px;
 }

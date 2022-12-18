@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Button from '../UI/button/Button';
 import css from './notLoggedHome.module.css';
 
 function NotLoggedHome(props) {
@@ -12,9 +13,10 @@ function NotLoggedHome(props) {
         <p className={css.subtitle}>
           We provide the best service for your shops.
         </p>
-        <button className={css.mainButton}>
-          <Link to='register'>Get started</Link>
-        </button>
+
+        <Link to='register'>
+          <Button>Get started</Button>
+        </Link>
       </div>
       <img src='../src/assets/hero.png' className={css.heroImg}></img>
     </section>

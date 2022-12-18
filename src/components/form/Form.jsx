@@ -4,7 +4,8 @@ import { useFormik } from 'formik';
 import { Link, useHistory } from 'react-router-dom';
 import { sendRequest } from '../../helpers/helpers';
 import { useUser } from '../../helpers/UserContext';
-import { toast } from 'react-hot-toast';
+import { toast, Toaster } from 'react-hot-toast';
+import Button from '../UI/button/Button';
 function Form(props) {
   const user = useUser();
   const history = useHistory();
@@ -88,37 +89,41 @@ function Form(props) {
         </h2>
         <p className={css.subtitle}>Please enter your details below</p>
         <form onSubmit={formik.handleSubmit}>
-          <input
-            type='text'
-            placeholder='Email'
-            name='email'
-            className={css.input}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.email}
-          />
-          {formik.touched.email && formik.errors.email ? (
-            <p className={css.inputError}>{formik.errors.email}</p>
-          ) : (
-            ''
-          )}
-          <input
-            type='password'
-            placeholder='Password'
-            name='password'
-            className={css.input}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.password}
-          />
-          {formik.touched.password && formik.errors.password ? (
-            <p className={css.inputError}>{formik.errors.password}</p>
-          ) : (
-            ' '
-          )}
-          <button type='submit' className={css.mainButton}>
+          <div>
+            <input
+              type='text'
+              placeholder='Email'
+              name='email'
+              className={css.input}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.email}
+            />
+            {formik.touched.email && formik.errors.email ? (
+              <p className={css.inputError}>{formik.errors.email}</p>
+            ) : (
+              ''
+            )}
+          </div>
+          <div className={css.inputWithError}>
+            <input
+              type='password'
+              placeholder='Password'
+              name='password'
+              className={css.input}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.password}
+            />
+            {formik.touched.password && formik.errors.password ? (
+              <p className={css.inputError}>{formik.errors.password}</p>
+            ) : (
+              ' '
+            )}
+          </div>
+          <Button onClick={formik.handleSubmit}>
             {props.type == 'login' ? 'Log in' : 'Register'}
-          </button>
+          </Button>
         </form>
         <p className={css.subtitle}>
           {props.type == 'login'

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Button from '../UI/button/Button';
 import css from './NoShopsFound.module.css';
 function NoShopsFound(props) {
   return (
@@ -8,9 +9,9 @@ function NoShopsFound(props) {
           Sorry, we did not find any created shops..
         </h2>
         <p className={css.subtitle}>Try adding a new shop to get started.</p>
-        <Link to='/addShop'>
-          <button className={css.mainButton}>Create one here</button>
-        </Link>
+        <Button>
+          <Link to='/addShop'>Create one here</Link>
+        </Button>
       </div>
       <img
         src='../src/assets/shrug.png'
