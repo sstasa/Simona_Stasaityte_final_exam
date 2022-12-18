@@ -1,4 +1,3 @@
-import { Toaster } from 'react-hot-toast';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import { UserProvider } from './helpers/UserContext';

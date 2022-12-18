@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
 export async function sendRequest(whatToSend, url) {
   try {
     const resp = await fetch(url, {
