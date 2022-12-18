@@ -2,15 +2,15 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   height: 90vh;
+  max-width: 1700px;
   margin: 0 auto;
 }
 .formImage {
-  background-image: url('../../assets/formBg.jpg');
+  background-image: url('../../assets/formBg.webp');
 }
 .form {
-  padding: 70px 50px 100px;
+  padding: 70px 150px 100px;
   text-align: center;
-  max-width: 800px;
   margin-top: 150px;
   border-radius: 15px;
   margin-bottom: 100px;
@@ -44,7 +44,7 @@
 }
 
 .link {
-  color: #ff9a53;
+  color: #ff7661;
   font-weight: 500;
   cursor: pointer;
 }

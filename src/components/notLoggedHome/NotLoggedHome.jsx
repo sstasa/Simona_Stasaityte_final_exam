@@ -18,7 +18,7 @@ function NotLoggedHome(props) {
           <Button>Get started</Button>
         </Link>
       </div>
-      <img src='../src/assets/hero.png' className={css.heroImg}></img>
+      <img src='../src/assets/heroNotLogged.webp' className={css.heroImg}></img>
     </section>
   );
 }

@@ -1,6 +1,6 @@
 .button {
   font-family: 'Poppins', sans-serif;
-  background-color: #ff9a53;
+  background-color: #ff7661;
   color: white;
   font-size: 0.9rem;
   border: none;
@@ -8,7 +8,7 @@
   padding: 15px 25px;
 }
 .button:hover {
-  background-color: #ff8128;
+  background-color: #ff5c43;
   cursor: pointer;
 }
 
@@ -17,13 +17,13 @@
   font-size: 0.9rem;
   font-weight: 500;
   background-color: #ffffff;
-  color: #ff9a53;
-  border: 3px solid #ff9a53;
+  color: #ff7661;
+  border: 3px solid #ff7661;
   border-radius: 8px;
   padding: 12px 22px;
 }
 
 .altButton:hover {
-  background-color: #fff1e6;
+  background-color: #ffdbd5;
   cursor: pointer;
 }

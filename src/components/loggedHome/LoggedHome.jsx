@@ -8,24 +8,25 @@ function LoggedHome(props) {
   return (
     <section className={`container`}>
       <div className={css.loggedHero}>
-        <div>
-          <h2 className={css.loggedHeroTitle}>
-            Welcome back, <span className={css.accent}>{user.emailValue}</span>{' '}
-            !
-          </h2>
-          <p className={css.subtitle}>
-            Glad to have you back! What would you like to do?
-          </p>
-          <div className={css.buttons}>
-            <Button>
-              <Link to='/addshop'>Add a new shop</Link>
-            </Button>
-            <Button>
-              <Link to='/shops'>View all shops</Link>
-            </Button>
-          </div>
+        <h2 className={css.loggedHeroTitle}>
+          Welcome back, <span className={css.accent}>{user.emailValue}</span> !
+        </h2>
+        <p className={css.subtitle}>
+          Glad to have you back! What would you like to do?
+        </p>
+        <div className={css.buttons}>
+          <Button>
+            <Link to='/addshop'>Add a new shop</Link>
+          </Button>
+          <Button>
+            <Link to='/shops'>View all shops</Link>
+          </Button>
         </div>
-        <img src='../src/assets/heroLogged.png'></img>
+        <img
+          src='../src/assets/hero.webp'
+          alt='hero image'
+          className={css.heroImg}
+        ></img>
       </div>
     </section>
   );

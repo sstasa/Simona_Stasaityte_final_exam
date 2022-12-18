@@ -16,9 +16,12 @@
   font-weight: 600;
 }
 .logoIcon {
-  color: #ff9a53;
+  color: #ff7661;
 }
 .headerButtons {
   display: flex;
   gap: 10px;
+}
+.headerBurger {
+  display: none;
 }

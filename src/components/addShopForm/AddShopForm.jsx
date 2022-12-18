@@ -52,91 +52,92 @@ function AddShopForm(props) {
           }}
         />
       </div>
-      <section className='container'>
-        <h2>Add a new shop</h2>
-        <p className={css.subtitle}>
-          Fill in the details about your shop below
-        </p>
-        <form
-          onSubmit={formik.handleSubmit}
-          className={`container ${cssAdd.form}`}
-        >
-          <input
-            type='text'
-            name='shopName'
-            placeholder='Shop name'
-            className={css.input}
-            onBlur={formik.handleBlur}
-            onChange={formik.handleChange}
-            value={formik.values.shopName}
-          />
-          {formik.touched.shopName && formik.errors.shopName ? (
-            <p className={css.inputError}>{formik.errors.shopName}</p>
-          ) : (
-            ''
-          )}
-          <input
-            type='text'
-            name='town'
-            placeholder='Town'
-            className={css.input}
-            onBlur={formik.handleBlur}
-            onChange={formik.handleChange}
-            value={formik.values.town}
-          />
-          {formik.touched.town && formik.errors.town ? (
-            <p className={css.inputError}>{formik.errors.town}</p>
-          ) : (
-            ''
-          )}
-          <input
-            type='number'
-            name='startYear'
-            placeholder='Year'
-            className={css.input}
-            onBlur={formik.handleBlur}
-            onChange={formik.handleChange}
-            value={formik.values.startYear}
-          />
-          {formik.touched.startYear && formik.errors.startYear ? (
-            <p className={css.inputError}>{formik.errors.startYear}</p>
-          ) : (
-            ''
-          )}
-          <input
-            type='textarea'
-            name='description'
-            placeholder='Description'
-            className={css.input}
-            onBlur={formik.handleBlur}
-            onChange={formik.handleChange}
-            value={formik.values.description}
-          />
-          {formik.touched.description && formik.errors.description ? (
-            <p className={css.inputError}>{formik.errors.description}</p>
-          ) : (
-            ''
-          )}
-          <div className={css.inputWithError}>
+      <section className={css.formSection}>
+        <div>
+          <h2 className={cssAdd.title}>Add a new shop</h2>
+          <p className={css.subtitle}>Tell us about your shop</p>
+          <form
+            onSubmit={formik.handleSubmit}
+            className={`container ${cssAdd.form}`}
+          >
             <input
               type='text'
-              name='imageUrl'
-              placeholder='Image link'
+              name='shopName'
+              placeholder='Shop name'
               className={css.input}
               onBlur={formik.handleBlur}
               onChange={formik.handleChange}
-              value={formik.values.imageUrl}
+              value={formik.values.shopName}
             />
-            {formik.touched.imageUrl && formik.errors.imageUrl ? (
-              <p className={css.inputError}>{formik.errors.imageUrl}</p>
+            {formik.touched.shopName && formik.errors.shopName ? (
+              <p className={css.inputError}>{formik.errors.shopName}</p>
             ) : (
               ''
             )}
-          </div>
-          <Button type='submit' onClick={formik.handleSubmit}>
-            Add shop
-          </Button>
-        </form>
+            <input
+              type='text'
+              name='town'
+              placeholder='Town'
+              className={css.input}
+              onBlur={formik.handleBlur}
+              onChange={formik.handleChange}
+              value={formik.values.town}
+            />
+            {formik.touched.town && formik.errors.town ? (
+              <p className={css.inputError}>{formik.errors.town}</p>
+            ) : (
+              ''
+            )}
+            <input
+              type='number'
+              name='startYear'
+              placeholder='Year'
+              className={css.input}
+              onBlur={formik.handleBlur}
+              onChange={formik.handleChange}
+              value={formik.values.startYear}
+            />
+            {formik.touched.startYear && formik.errors.startYear ? (
+              <p className={css.inputError}>{formik.errors.startYear}</p>
+            ) : (
+              ''
+            )}
+            <input
+              type='textarea'
+              name='description'
+              placeholder='Description'
+              className={css.input}
+              onBlur={formik.handleBlur}
+              onChange={formik.handleChange}
+              value={formik.values.description}
+            />
+            {formik.touched.description && formik.errors.description ? (
+              <p className={css.inputError}>{formik.errors.description}</p>
+            ) : (
+              ''
+            )}
+            <div className={css.inputWithError}>
+              <input
+                type='text'
+                name='imageUrl'
+                placeholder='Image link'
+                className={css.input}
+                onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
+                value={formik.values.imageUrl}
+              />
+              {formik.touched.imageUrl && formik.errors.imageUrl ? (
+                <p className={css.inputError}>{formik.errors.imageUrl}</p>
+              ) : (
+                ''
+              )}
+            </div>
+            <Button type='submit' onClick={formik.handleSubmit}>
+              Add shop
+            </Button>
+          </form>
+        </div>
+        <div className={cssAdd.shopsImg}></div>
       </section>
     </>
   );

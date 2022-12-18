@@ -1,3 +1,11 @@
 .form {
   text-align: center;
 }
+.title {
+  margin-top: 50px;
+  font-size: 2.5rem;
+}
+.shopsImg {
+  background-image: url('../../assets/shop.webp');
+  background-position: center;
+}

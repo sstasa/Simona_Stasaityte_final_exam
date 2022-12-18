@@ -14,7 +14,7 @@ function NoShopsFound(props) {
         </Button>
       </div>
       <img
-        src='../src/assets/shrug.png'
+        src='../src/assets/shrug.webp'
         alt='not found image'
         className={css.notFoundImg}
       ></img>

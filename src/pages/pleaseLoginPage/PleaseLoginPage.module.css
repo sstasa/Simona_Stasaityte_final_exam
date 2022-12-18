@@ -1,5 +1,5 @@
 .section {
-  margin: 50px auto;
+  margin: 0 auto;
   max-width: 600px;
   padding: 70px;
   text-align: center;
@@ -16,7 +16,7 @@
 }
 
 .link {
-  color: #ff9a53;
+  color: #ff7661;
   font-weight: 500;
 }
 
