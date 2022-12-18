@@ -88,6 +88,15 @@ function Form(props) {
           {props.type == 'login' ? 'Welcome back!' : 'Create Account'}
         </h2>
         <p className={css.subtitle}>Please enter your details below</p>
+        <div>
+          <Toaster
+            gutter={-45}
+            containerStyle={{
+              position: 'absolute',
+              top: 190,
+            }}
+          />
+        </div>
         <form onSubmit={formik.handleSubmit}>
           <div>
             <input
@@ -121,7 +130,7 @@ function Form(props) {
               ' '
             )}
           </div>
-          <Button onClick={formik.handleSubmit}>
+          <Button onClick={formik.handleSubmit} type='submit'>
             {props.type == 'login' ? 'Log in' : 'Register'}
           </Button>
         </form>

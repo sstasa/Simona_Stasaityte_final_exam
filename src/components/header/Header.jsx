@@ -11,10 +11,8 @@ function Header(props) {
 
   function handleLogout() {
     user.logout();
-    toast('See you next time!', {
-      icon: '👏',
-    });
-    history.push('/');
+    toast.dismiss();
+    history.push('/login');
   }
   return (
     <header className={css.header}>
@@ -46,7 +44,7 @@ function Header(props) {
                 <Button>Login</Button>
               </Link>
               <Link to='/register'>
-                <Button type='alt'>Register</Button>
+                <Button styleType='alt'>Register</Button>
               </Link>
             </div>
           )}

@@ -12,12 +12,9 @@ import ShopsPage from './pages/ShopsPage';
 function App() {
   return (
     <div className='App'>
-      <div>
-        <Toaster gutter={-45} />
-      </div>
-      <Switch>
-        <UserProvider>
-          <Route path='/' exact>
+      <UserProvider>
+        <Switch>
+          <Route path={'/'} exact>
             <HomePage />
           </Route>
           <Route path='/login'>
@@ -32,11 +29,11 @@ function App() {
           <Route path='/shops'>
             <ShopsPage />
           </Route>
-          <Route path='*'>
+          <Route path={'*'}>
             <NotFoundPage />
           </Route>
-        </UserProvider>
-      </Switch>
+        </Switch>
+      </UserProvider>
     </div>
   );
 }

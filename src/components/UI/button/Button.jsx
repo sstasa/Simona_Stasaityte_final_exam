@@ -3,7 +3,8 @@ function Button(props) {
   return (
     <button
       onClick={props.onClick}
-      className={props.type === 'alt' ? css.altButton : css.button}
+      className={props.styleType === 'alt' ? css.altButton : css.button}
+      type={props.type === 'submit' ? 'submit' : 'button'}
     >
       {props.children}
     </button>

@@ -133,7 +133,9 @@ function AddShopForm(props) {
               ''
             )}
           </div>
-          <Button onClick={formik.handleSubmit}>Add shop</Button>
+          <Button type='submit' onClick={formik.handleSubmit}>
+            Add shop
+          </Button>
         </form>
       </section>
     </>
